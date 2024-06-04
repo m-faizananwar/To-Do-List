@@ -1,12 +1,13 @@
-#include<stdio.h>
-#include<conio.h>
-#include<windows.h>
-#include<string.h>
-#include<time.h>
+#include <stdio.h>
+#include "conio.h"
+#include <string.h>
+#include <time.h>
 
 #define ENTER 13
+#define LF 10
 #define TAB 9
 #define BCKSPC 8
+#define BCKSPC_MAC 127
 
 struct user
 {
@@ -49,15 +50,16 @@ void generateUsername(char email[50], char username[50])
 void takepassword(char pwd[50])
 {
     int i = 0; // Initialize 'i' to 0
-    char ch;
+    int ch;
     while (1){
         ch = getch();
-        if (ch == ENTER || ch == TAB)
+        if (ch == ENTER || ch == LF || ch == TAB)
         {
             pwd[i] = '\0';
+            printf("\n");
             break;
         }
-        else if (ch == BCKSPC)
+        else if (ch == BCKSPC || ch == BCKSPC_MAC)
         {
             if (i > 0)
             {
@@ -67,8 +69,10 @@ void takepassword(char pwd[50])
         }
         else
         {
-            pwd[i++] = ch;
-            printf("* \b");
+            if (i < 49) {
+                pwd[i++] = ch;
+                printf("*");
+            }
         }
     }
 }
@@ -94,10 +98,9 @@ void signup()
     {
         generateUsername(user.email, user.username);
         fp = fopen("Users.dat", "a+");
-        fwrite(&user, sizeof(struct user), 1, fp);
-        if (fwrite != 0) {
+        if (fwrite(&user, sizeof(struct user), 1, fp) != 0) {
             printf("\n\nUser registration success.\nYour username is %s.\nGetting Started....\n", user.username);
-        delay(1000);
+            delay(1000);
         }
         else 
             printf("\n\nSorry! Something went wrong :(");
@@ -106,7 +109,7 @@ void signup()
     else
     {
         printf("\n\nPassword don't match");
-        Beep(750, 300);
+        printf("\a");
     }
 
 }
@@ -145,7 +148,7 @@ char* login(char *userFileName)
             else 
             {
                 printf("\n\nInvalid Password!\n");
-                Beep(800, 300);
+                printf("\a");
                 fclose(fp);
                 return NULL;
             }
@@ -156,7 +159,7 @@ char* login(char *userFileName)
     if (!usrFound)
     {
         printf("\n\nUser is not registered!");
-        Beep(800, 300);
+        printf("\a");
     }
 
     fclose(fp);
@@ -206,7 +209,7 @@ void forgotPassword()
                     strcpy(usr.password, newPassword);
                 else {
                     printf("\n\nPasswords don't match.");
-                    Beep(800, 300);
+                    printf("\a");
                 }
 
                 usrFound = 1;  // Set usrFound to 1 to indicate an issue
@@ -215,7 +218,7 @@ void forgotPassword()
         }
         if (!usrFound) {
             printf("\n\nUser not found or information provided is incorrect!");
-            Beep(800, 300);
+            printf("\a");
         }
 
         fclose(fp);

@@ -49,7 +49,7 @@ char* getCurrentTime() {
 
 void welcomePage() 
 {
-    system("cls");
+    system("clear");
     printf(" \t\t                           _________________________________________________________________________\n");
     printf(" \t\t\t                          _______  ____         _____   ____    _      _____  _____ _______             \n");
     printf(" \t\t\t                         |__   __ / __ \\       |  __ \\ / __ \\  | |    |_   _|/ ____|__   __|         \n");
@@ -78,20 +78,20 @@ void freeArrays()
     free(toDoList);
 }
 
-int safeInputInt(int variable,int lowerlimit, int upperlimit)       // Takes safe input of integer and if entered value is within scope
+int safeInputInt(int variable, int lowerlimit, int upperlimit)       // Takes safe input of integer and if entered value is within scope
 {
-
+    char input[10];
     while (1) 
     {
-        variable = getch() - '0';                                   // Converts acsii to integer
-        if(variable >= lowerlimit && variable <= upperlimit )
-        {
-            printf("%d\n",variable);
-            return variable;
+        if (fgets(input, sizeof(input), stdin) != NULL) {
+            if (sscanf(input, "%d", &variable) == 1) {
+                if (variable >= lowerlimit && variable <= upperlimit) {
+                    return variable;
+                }
+            }
         }
-        printf("%c\n\nInvalid Input.\n\nEnter an integer (between %d and %d): ",(char)(variable + '0'),lowerlimit,upperlimit);
+        printf("\nInvalid Input. Please enter an integer between %d and %d: ", lowerlimit, upperlimit);
     }
-    
 }
 
 
@@ -613,7 +613,7 @@ void allTasks() {                                                       // Leads
 
 void selectColor(Color *backGroundColor) 
 {
-    int option;
+    char option;
 
     printf("\n\nSelect BackGround Color :"
            "\n\n0.\tBlack\n"
@@ -678,7 +678,7 @@ void settings()
         else{
         totalColor[strlen(totalColor)] = backGroundColor;
         totalColor[strlen(totalColor)] = textColor;
-        system(totalColor);
+        // system(totalColor);
         }
         moveToNextPage();
     }
@@ -701,7 +701,7 @@ void displayHelp()
 
 int main() 
 {
-    system("color 0b");
+    // system("color 0b");
 
     welcomePage();
     LoginPage(userFileName);
