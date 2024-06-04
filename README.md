@@ -1,4 +1,4 @@
-#To-Do List: Your Ultimate CLI Task Manager
+To-Do List: Your Ultimate CLI Task Manager
 Welcome to To-Do List, the Command Line Interface (CLI) application designed to streamline your task management experience! Whether you're a developer, a student, or just someone who loves using the terminal, To-Do List offers a robust and efficient way to keep track of your tasks and deadlines with ease.
 
 Key Features
