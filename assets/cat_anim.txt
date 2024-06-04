@@ -1,0 +1,8 @@
+FACE_NORMAL:( o.o )
+FACE_BLINK:( -.- )
+FACE_HAPPY:( ^.^ )
+FACE_LOVE:( >v< )
+FACE_SURPRISE:( o.O )
+LEGS_STAND:> ^ <
+LEGS_WALK1:/ ^ \
+LEGS_WALK2:\ ^ /

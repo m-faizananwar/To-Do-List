@@ -1,26 +1,42 @@
-# To-Do List: Your Ultimate CLI Task Manager
+# KeyNotes: Your Ultimate Terminal Workspace
 
-Welcome to **To-Do List**, the Command Line Interface (CLI) application designed to streamline your task management experience! Whether you're a developer, a student, or just someone who loves using the terminal, To-Do List offers a robust and efficient way to keep track of your tasks and deadlines with ease.
+Welcome to **KeyNotes**, the professional Command Line Interface (CLI) application designed to streamline your task management experience with a beautiful, modern aesthetic!
 
-## Key Features
+## ✨ Key Features
 
-### 🕒 Timestamped Entries
-Never lose track of time! Each task you add comes with a timestamp, helping you to prioritize and manage your day effectively.
+### 🎨 Catppuccin Aesthetic
+Enjoy a sophisticated, terminal-native UI featuring a soft, professional pastel palette that's easy on the eyes.
 
-### ✅ Task Management
-Mark tasks as complete, delete them, or update their details effortlessly. Stay on top of your to-do list with intuitive commands.
+### ⌨️ Interactive Navigation
+Say goodbye to clunky number menus. Navigate your workspace effortlessly using your arrow keys and intuitive interactive menus.
 
-### 🎨 Customizable Interface
-Make the CLI your own! Personalize your experience by changing the font color to suit your style and preferences. Whether you prefer a professional look or something more vibrant, we've got you covered.
+### 🕒 Smart Indexing
+Every entry in KeyNotes is automatically timestamped and categorized, helping you maintain a clear history of your progress.
 
-### 📋 Simple and Intuitive Commands
-Our application is designed to be user-friendly, with straightforward commands that make task management a breeze. Add, view, complete, and delete tasks without any hassle.
+### 🔒 Secure Workspace
+Your tasks and account data are stored securely on your local machine, ensuring your privacy while keeping your dashboard persistent across sessions.
 
-### 📂 Persistent Storage
-Your tasks are stored securely, ensuring that your to-do list is always available, even after you close the terminal.
+### 🚀 Performance
+Built in pure C for maximum speed and efficiency, KeyNotes delivers a 60fps-like smooth experience directly in your favorite terminal.
 
-## Why Choose To-Do List?
+## 🛠️ Getting Started
 
-- **Efficiency**: Manage your tasks quickly and effectively right from the terminal.
-- **Customization**: Tailor the look and feel of your interface to suit your taste.
-- **Simplicity**: Enjoy a clean, clutter-free environment that focuses on what matters—your tasks.
+### Compilation
+To build KeyNotes on your machine, ensure you have `gcc` installed and run:
+
+```bash
+gcc project.c -o keynotes
+```
+
+### Execution
+Launch your new workspace with:
+
+```bash
+./keynotes
+```
+
+## 📋 Usage Tips
+- Use **↑ / ↓ Arrow Keys** to highlight options.
+- Press **Enter** to select.
+- Follow the colored prompts for easy data entry.
+- Enjoy the minimalist, designed experience! ✨

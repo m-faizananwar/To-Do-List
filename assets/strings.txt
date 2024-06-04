@@ -1,0 +1,5 @@
+APP_NAME:KeyNotes
+MSG_WELCOME:Welcome back, Commander.
+MSG_EXIT:Session terminated. Safe travels.
+MSG_RETRY:( Press any key to retry or ESC to go back )
+MENU_FOOTER:( Use Arrows to navigate, Enter to select )

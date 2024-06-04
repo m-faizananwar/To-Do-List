@@ -1,3 +1,6 @@
+#ifndef CONIO_H_MAC
+#define CONIO_H_MAC
+
 #include <stdio.h>
 #include <termios.h>
 #include <unistd.h>
@@ -18,4 +21,6 @@ static inline int getch() {
 
 // Mock Sleep for macOS
 #define Sleep(ms) usleep((ms) * 1000)
+
+#endif // CONIO_H_MAC
 
